@@ -1,10 +1,25 @@
 # Создание компонета
+
+## Создание функционального компонента
 ```javascript
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
 
-import Navbar from "./src/Navbar";
-import TodoBlock from "./src/TodoBlock";
+import ChildComponent from "./ChildComponent";
 
+export default function(props){
+  let [variable, setVariable] = useState(1);
+  
+  return (
+    <View style={styles.container}>
+      <ChildComponent/>
+    </View>
+  )
+  
+  let styles = StyleSheet.create({
+    container: {
+      backgroundColor: 'red'
+    }
+  })
+}
 ```
